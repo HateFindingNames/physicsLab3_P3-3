@@ -16,4 +16,9 @@ magnitude seems to be correct.\par
 Another unnoticed cause of the error could be the wear and aging of the setup, as the wire, for example, looked quite
 sensitive and worn out.\par
 It can then be clearly stated that the \textsc{RealTerm} program should be revised and that several, heavier and longer rods should
-be used to better determine the unknown pendulum inertia.
+be used to better determine the unknown pendulum inertia.\par\medskip
+The estimated sensitivity is off by quite a bit. It is assumed, that the resistor does not play a significant role estimating
+the sensitivity.\par
+Nevertheless, taking the sensitivity obtained from the data and plugged into \cref{eq:est.sensitivity} yield a value of
+\(R \approx \SI{10^7}{\ohm}\). Considering the very small capacitances, it appears reasonable to have a high resistance
+in order not to charge the capacitor too quick.
