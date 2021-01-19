@@ -14,7 +14,7 @@
         frequency \( \omega_0 \).
     \subsection*{Differential Equation of the Damped Harmonic Oscillation}
         \begin{equation}
-            J \ddot{\varphi} = -D\varphi -\rho\dot{\varphi}+M\cos(\omega t)
+            J \ddot{\varphi} = -D\varphi -\rho\dot{\varphi}+M\cos(\omega t) \footnote{\textcite{Eichler.2016}}
         \end{equation}
     \subsection*{Damping cases}
         Overdamped: The system returns to equilibrium without oscillating.\par
@@ -285,7 +285,7 @@
             \caption[Timing diagram showing the signal transition]{Timing diagram showing the signal transition.}
             \label{fig:timing_diagram}
         \end{figure}
-        The clock frequency of the \micro C is \( f = \SI{16}{MHz} \) which gives a cycle time of \( \delta t = \SI{62.5}{ns} \).
+        The clock frequency of the \micro C is \( f = \SI{16}{MHz} \) which gives a cycle time of \( \Delta t = \SI{62.5}{ns} \).
         
         To ready the capacitors for the next charging cycle they need to be discharged as quick as possible. Considering
         that a time to discharge the capacitors \( < \Delta t \) makes no significant difference the unknown value \( R \)
@@ -318,5 +318,6 @@
             \chi'   &= -\varepsilon_0 R \frac{4 D^2}{16d} \ln\left( 1 - \frac{U_{th}}{U_0} \right) \Delta t^{-1} \nonumber \\
                     &= -\SI{8.85 \cdot 10^{-12}}{\frac{As}{Vm}} \cdot \SI{3.9}{k\ohm} \cdot \frac{4 \cdot \SI{0.12^2}{\metre\squared}}{16 \cdot \SI{0.01}{\metre}} \ln\left( 1 - \frac{\SI{2.5}{\volt}}{\SI{5}{\volt}} \right) \cdot \frac{1}{\SI{62.5}{ns}} \nonumber \\
                     &\approx \SI{0.138}{\radian^{-1}}
+                    \label{eq:est.sensitivity}
         \end{align}
         \nocite{Demtroder.2018.Experimentalphysik.1}\nocite{Eichler.2016}
