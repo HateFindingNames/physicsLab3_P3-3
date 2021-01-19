@@ -46,7 +46,7 @@
         % holding the current flowing through the output terminals constant while the output voltage varies depending on
         % load conditions.
         %
-    \subsection*{Capacitance of a Parallel Plate Capacitor}
+    \subsection*{Capacitance of a Parallel Plate Capacitor}\label{sec:capacitance of a parallel plate capacitor}
         The capacitance of a parallel plate capacitor is: \(C = \varepsilon_0 \varepsilon_r \cdot \frac{A}{d}\)
         %
     \subsection*{Time-Constant of an RC-Circuit}
@@ -142,9 +142,9 @@
             \label{fig:rotationalIntertia_of_Cyl}
         \end{figure}
         %
-        Inertia of a rotating mass dimensionless mass is proportional to the square of the distance to its rotational axis.
+        Inertia of a rotating dimensionless mass is proportional to the square of the distance to its rotational axis.
         As the mass of a cylindrical body is distributed over its volume, it is necessary to integrate over all \( dm  \) along
-        the distance \( r \) from the center of rotation. \cite{Eichler.2016}
+        the distance \( r \) from the center of rotation.
         \begin{equation}
             J_R = \int r^2 dm
             \label{eq:rotationalIntertia_of_Cyl}
@@ -161,57 +161,60 @@
         \end{equation}
         %
     \subsection{Equations for the Sensor Capacitances}\label{sec:preparation_task_5}
-        To derive:
-        \begin{align}
-            C_1(\varphi) = \varepsilon_0 \frac{\pi D^2}{16 d} \left( 1 - \frac{2\varphi}{\pi} \right) \\
-            C_2(\varphi) = \varepsilon_0 \frac{\pi D^2}{16 d} \left( 1 + \frac{2\varphi}{\pi} \right)
-        \end{align}
-        with
-        \begin{equation}
-            A_{1,2}(\varphi) = \frac{1}{16}\pi D^2 \left( 1 \pm \frac{2\varphi}{\pi} \right)
-        \end{equation}
+        As described in \cref{sec:capacitance of a parallel plate capacitor}, the capacitance of a parallel plate capacitor
+        is dependent on the overlapping area. Electrically, each vertical pair of capacitors are connected in parallel. They
+        change there capacitance equally and in conjunction with the rotor rotating in any direction.\par
+        % To derive:
+        % \begin{align}
+        %     C_1(\varphi) = \varepsilon_0 \frac{\pi D^2}{16 d} \left( 1 - \frac{2\varphi}{\pi} \right) \\
+        %     \label{eq:capacitance 1 from tasks}
+        %     C_2(\varphi) = \varepsilon_0 \frac{\pi D^2}{16 d} \left( 1 + \frac{2\varphi}{\pi} \right)
+        %     \label{eq:capacitance 2 from tasks}
+        % \end{align}
+        % with
+        % \begin{equation}
+        %     A_{1,2}(\varphi) = \frac{1}{16}\pi D^2 \left( 1 \pm \frac{2\varphi}{\pi} \right)
+        %     \label{eq:area from tasks}
+        % \end{equation}
         %
         \begin{figure}[h]
             \centering
-            \subfloat[Rotor at \( \varphi = 0 \)\label{subfig:rotorAt.5pi}]{\includegraphics[width=.3\textwidth]{aufbau/statorRotorStator_0.5pi.jpg}}
-            \subfloat[Rotor at \( \varphi = \pm \frac{\pi}{2} \)\label{subfig:rotorAtpi}]{\includegraphics[width=.3\textwidth]{aufbau/statorRotorStator_pi.jpg}}
-            \subfloat[Rotor at \( \varphi = \mp \frac{\pi}{2} \)\label{subfig:rotorAt0}]{\includegraphics[width=.3\textwidth]{aufbau/statorRotorStator_0.jpg}}
+            \subfloat[Rotor at \( \varphi = \pm \frac{\pi}{2} \)\label{subfig:rotorAt pm halfPi}]{\includegraphics[width=.3\textwidth]{aufbau/statorRotorStator_pi.jpg}}
+            \subfloat[Rotor at \( \varphi = 0 \)\label{subfig:rotorAt0}]{\includegraphics[width=.3\textwidth]{aufbau/statorRotorStator_0.5pi.jpg}}
+            \subfloat[Rotor at \( \varphi = \mp \frac{\pi}{2} \)\label{subfig:rotorAt mp halfPi}]{\includegraphics[width=.3\textwidth]{aufbau/statorRotorStator_0.jpg}}
             \caption[Schematic assembly of the angular sensor]{Schematic assembly of the angular sensor. The semi circular rotor plate (green) sandwiched between the two stators (red). The area of the rotor facing one of the vertical stator
             pairs varies with the angular displacement \( \varphi \)
             of the rotor.}
             \label{fig:rotorPositions}
         \end{figure}
         %
-        One half of the stator pairs together with the rotor plate forms two capacitors connected in series. With each
-        capacitor having the same value at any time the total capacitance equates to
+        Each of the vertically superimposed stator pairs together with the rotor plate form two capacitors connected in parallel
+        with each capacitor having the same absolute value at any time. The total capacitance equates to
         \begin{equation}
-            C_{1,2}(\varphi) = \varepsilon_0 \varepsilon_r \frac{A(\pm\varphi)}{2d}
+            C_{1,2}(\varphi) = \varepsilon_0 \varepsilon_r \frac{A_{1,2}(\pm \varphi)}{d}
             \label{eq:angularCapacitance}
         \end{equation}
-        Where \( A(\varphi) \) can be expressed as
+        Where \( A_{1,2}(\pm \varphi) \) can be expressed as
         \begin{align}
-            A(\varphi) = \frac{1}{8}D^2 \left( \pi \pm \varphi \right) \nonumber \\
-            A(\varphi) = \frac{1}{8}D^2 \left( \frac{\pi^2}{\pi} \pm \frac{\pi\varphi}{\pi} \right) \nonumber \\
-            A(\varphi) = \frac{1}{8} \pi D^2 \left( 1 \pm \frac{\varphi}{\pi}\right)
+            A_{1,2}(\varphi)  &= \frac{1}{16}D^2 \left( \pi \pm 2\varphi \right) \nonumber \\
+                        &= \frac{1}{16}D^2 \left( \frac{\pi^2}{\pi} \pm \frac{\pi}{\pi}2\varphi \right) \nonumber \\
+                        &= \frac{1}{16} \pi D^2 \left( 1 \pm \frac{2\varphi}{\pi}\right)
             \label{eq:angularDependencyOfTheArea}
         \end{align}
-        Say the zero position is chosen such as the whole area of the rotor takes effect (see \cref{subfig:rotorAt0})
-        \cref{eq:angularDependencyOfTheArea} maximizes. Thus, the absolute capacitance of one of the capacitors is maximized.
-        Stepping the rotor about \( \varphi = \frac{\pi}{2} \) as seen in \cref{subfig:rotorAt.5pi} halves the
-        effective area of the capacitor halving the total capacitance. At an angular displacement of \( \varphi = \pi \)
-        the capacitance equates to zero respectively.\\
-        Combining \cref{eq:angularCapacitance} and \cref{eq:angularDependencyOfTheArea} gives \footnote{The solution is missing a factor of 2 in front of \(\varphi\)}
-        \begin{equation}
-            C_{1,2} = \varepsilon_0 \frac{\pi D^2}{16d} \left( 1 \pm \frac{2\varphi}{\pi} \right)
-        \end{equation}
+        Say the zero-position is chosen such as each half of the rotor contributes to each of the stator pairs (see \cref{subfig:rotorAt0})
+        \(A_1 = A_2\) applies. In any other case either \(A_1\) or \(A_2\) maximizes or minimizes respectively as shown in
+        \cref{eq:rotation cases} (see \cref{subfig:rotorAt pm halfPi} and \cref{subfig:rotorAt mp halfPi} for reference).\par\medskip
+        %
+        Combining \cref{eq:angularCapacitance} and \cref{eq:angularDependencyOfTheArea} with \(\varepsilon_r = 1\) (air) gives
         %
         \begin{equation}
-            \left(1 \pm \frac{2\varphi}{\pi} \right)
+            C_{1,2} = \varepsilon_0 \frac{\pi D^2}{16d} \left( 1 \pm \frac{2\varphi}{\pi} \right) \quad \text{where} \quad \left(1 \pm \frac{2\varphi}{\pi} \right)
             \begin{cases}
-                = 0 \quad \text{for} \quad \varphi = \pm \frac{\pi}{2} \nonumber \\
+                = 0 \quad \text{for} \quad \varphi = \mp \frac{\pi}{2} \nonumber \\
                 = 1 \quad \text{for} \quad \varphi = 0 \nonumber \\
-                = 2 \quad \text{for} \quad \varphi = \mp \frac{\pi}{2} \nonumber
+                = 2 \quad \text{for} \quad \varphi = \pm \frac{\pi}{2} \nonumber
             \end{cases}
+            \label{eq:rotation cases}
         \end{equation}
         %
     \subsection{Time to Reach the Threshold Voltage}\label{sec:preparation_task_6}
@@ -316,4 +319,4 @@
                     &= -\SI{8.85 \cdot 10^{-12}}{\frac{As}{Vm}} \cdot \SI{3.9}{k\ohm} \cdot \frac{4 \cdot \SI{0.12^2}{\metre\squared}}{16 \cdot \SI{0.01}{\metre}} \ln\left( 1 - \frac{\SI{2.5}{\volt}}{\SI{5}{\volt}} \right) \cdot \frac{1}{\SI{62.5}{ns}} \nonumber \\
                     &\approx \SI{0.138}{\radian^{-1}}
         \end{align}
-        \nocite{Demtroder.2018.Experimentalphysik.1}
+        \nocite{Demtroder.2018.Experimentalphysik.1}\nocite{Eichler.2016}
