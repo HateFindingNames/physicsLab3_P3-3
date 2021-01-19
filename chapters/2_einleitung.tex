@@ -22,10 +22,10 @@
         Underdamped: The system oscillates (at reduced frequency compared to the undamped case) with the amplitude gradually
         decreasing to zero.
     \subsection*{Rotational Inerta}
-        A cylindrical rot has a rotational inertia about its center of: \(J_S = \frac{1}{12}ml^2\)
+        A cylindrical rod has a rotational inertia about its center of: \(J_S = \frac{1}{12}ml^2\)
         %
     \subsection*{\textsc{Steiner}'s Theorem}
-        \textsc{Steiner}'s Theorem: \(J = J_S + md^2\)
+        \textsc{Steiner}'s Theorem: \(J = J_S + mr^2\)
         %
     \subsection*{Eddy Current Brake}
         The equivalent circuit of a conductor exposed to a changing magnetic field is composed of only a voltage source
@@ -146,17 +146,17 @@
         As the mass of a cylindrical body is distributed over its volume, it is necessary to integrate over all \( dm  \) along
         the distance \( r \) from the center of rotation. \cite{Eichler.2016}
         \begin{equation}
-            J_Z = \int r^2 dm
+            J_R = \int r^2 dm
             \label{eq:rotationalIntertia_of_Cyl}
         \end{equation}
         With
         \begin{equation}
-            \rho = \frac{dm}{dx} = \frac{M}{L} \qquad \Leftrightarrow \qquad dm = \frac{M}{L} dx
+            \rho = \frac{dm}{dx} = \frac{m}{L} \qquad \Leftrightarrow \qquad dm = \frac{m}{L} dx
         \end{equation}
         plugged into \cref{eq:rotationalIntertia_of_Cyl} with respect to the integration limits as of \cref{fig:rotationalIntertia_of_Cyl}
         gives
         \begin{equation}
-            J_Z = \int_{-\nicefrac{L}{2}}^{\nicefrac{L}{2}} \frac{M}{L} x^2 dx = \frac{1}{12}M L^2
+            J_R = \int_{-\nicefrac{L}{2}}^{\nicefrac{L}{2}} \frac{m}{L} x^2 dx = \frac{1}{12}m L^2
             \label{eq:rotationalIntertia_of_Cyl alternate}
         \end{equation}
         %
@@ -316,3 +316,4 @@
                     &= -\SI{8.85 \cdot 10^{-12}}{\frac{As}{Vm}} \cdot \SI{3.9}{k\ohm} \cdot \frac{4 \cdot \SI{0.12^2}{\metre\squared}}{16 \cdot \SI{0.01}{\metre}} \ln\left( 1 - \frac{\SI{2.5}{\volt}}{\SI{5}{\volt}} \right) \cdot \frac{1}{\SI{62.5}{ns}} \nonumber \\
                     &\approx \SI{0.138}{\radian^{-1}}
         \end{align}
+        \nocite{Demtroder.2018.Experimentalphysik.1}
